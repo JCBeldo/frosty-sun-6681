@@ -1,0 +1,6 @@
+<h2><center>Patients</h2>
+
+<ul><% @patients.only_over_eighteen.each do |patient| %>
+  <li><%= patient.name %>
+<% end %>
+</ul>
