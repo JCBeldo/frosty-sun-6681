@@ -13,6 +13,7 @@ RSpec.describe 'doctor show page' do
   let!(:pat_4) { Patient.create!(name: "Zola Shepherd", age: 2) }
   let!(:doc_pat_1) { DoctorPatient.create!(doctor_id: doc_1.id, patient_id: pat_1.id) }
   let!(:doc_pat_2) { DoctorPatient.create!(doctor_id: doc_1.id, patient_id: pat_2.id) }
+  let!(:doc_pat_3) { DoctorPatient.create!(doctor_id: doc_2.id, patient_id: pat_1.id) }
 
   describe 'displays the doctors info, including name, specialty, university, hospital, and patients' do
     it 'should display the name, specialty, and university' do
@@ -42,6 +43,21 @@ RSpec.describe 'doctor show page' do
       
       expect(page).to have_content("Katie Bryce")
       expect(page).to have_content("Denny Duquette")
+    end
+  end
+
+  describe 'Remove a patient' do
+    it 'should display a button to remove a patient that redirects bcak to show page' do
+      visit doctor_path(doc_1)
+ 
+      expect(page).to have_content("Katie Bryce")
+      expect(page).to have_button("Remove Katie Bryce")
+
+      click_button("Remove Katie Bryce")
+       
+      expect(current_path).to eq(doctor_path(doc_1))
+       
+      expect(page).to_not have_content("Katie Bryce")
     end
   end
 end

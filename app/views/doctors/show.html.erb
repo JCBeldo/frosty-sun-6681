@@ -7,6 +7,6 @@
 
 <h3>Hospital: <%= @doctor.hospital_name %></h3>
 <h3>Patients:</h3> <ul><% @doctor.patients.each do |patient| %>
-  <li><%= patient.name %>
+  <li><%= patient.name %> <%= button_to "Remove #{patient.name}", doctor_path(@doctor), method: :delete %>
 <% end %>
 </ul>
