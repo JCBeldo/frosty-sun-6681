@@ -59,6 +59,12 @@ RSpec.describe 'doctor show page' do
        
       expect(page).to_not have_content("Katie Bryce")
     end
+
+    it 'should still display a patient from another doctors page' do
+      visit doctor_path(doc_2)
+
+      expect(page).to have_content("Katie Bryce")
+    end
   end
 end
 
