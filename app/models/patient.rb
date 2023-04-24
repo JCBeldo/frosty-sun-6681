@@ -4,6 +4,6 @@ class Patient < ApplicationRecord
 
   def only_over_eighteen
     where("age >= '18'")
-    
+    .order(:name)
   end
 end
