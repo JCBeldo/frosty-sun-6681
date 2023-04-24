@@ -125,10 +125,10 @@ Name: Seaside Health & Wellness Center
 
 #### Patients
 
-Name: Katie Bryce, Age: 24
+name: "Katie Bryce", age: 24
 
-Name: Denny Duquette, Age: 39
+name: "Denny Duquette", age: 39
 
-Name: Rebecca Pope, Age: 32
+name: "Rebecca Pope", age: 32
 
-Name: Zola Shepherd, Age: 2
+name: "Zola Shepherd", age: 2

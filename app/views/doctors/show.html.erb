@@ -1,6 +1,12 @@
 <h2><center>Doctor</h2>
 <ul>
-  <li><%= @doctor.name %>
-  <li><%= @doctor.specialty %>
-  <li><%= @doctor.university %>
+  <li>Name: <%= @doctor.name %>
+  <li>Specialty: <%= @doctor.specialty %>
+  <li>Doctorate From: <%= @doctor.university %>
+</ul>
+
+<h3>Hospital: <%= @doctor.hospital_name %></h3>
+<h3>Patients:</h3> <ul><% @doctor.patients.each do |patient| %>
+  <li><%= patient.name %>
+<% end %>
 </ul>
